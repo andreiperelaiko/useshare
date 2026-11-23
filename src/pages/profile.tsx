@@ -154,7 +154,7 @@ export function ProfilePage() {
                   key={offer.id}
                   offer={offer}
                   status="Опубликовано"
-                  details={offer.location}
+                  details={offer.metro ? `м. ${offer.metro}` : offer.location}
                   index={index}
                 />
               ))}

@@ -22,6 +22,7 @@ import { getOffers } from "@/lib/data"
 
 export function HomePage() {
   const [offers] = useState(getOffers)
+  const [visibleCount, setVisibleCount] = useState(24)
   const [query, setQuery] = useState("")
   const [location, setLocation] = useState("")
   const [min, setMin] = useState("")
@@ -31,7 +32,7 @@ export function HomePage() {
       offer.title
         .toLocaleLowerCase("ru")
         .includes(query.toLocaleLowerCase("ru")) &&
-      offer.location
+      `${offer.location} ${offer.metro ?? ""}`
         .toLocaleLowerCase("ru")
         .includes(location.toLocaleLowerCase("ru")) &&
       (!min || offer.price >= Number(min)) &&
@@ -46,7 +47,8 @@ export function HomePage() {
               Вещи рядом с вами
             </h1>
             <p className="mt-2 text-muted-foreground">
-              Найдите то, что пригодится именно сейчас.
+              Демонстрационные объявления: цены и доступность приведены для
+              примера.
             </p>
           </div>
           <span className="brand-script hidden text-4xl text-primary/80 sm:block">
@@ -78,7 +80,7 @@ export function HomePage() {
                     id="location"
                     value={location}
                     onChange={(event) => setLocation(event.target.value)}
-                    placeholder="Город или район"
+                    placeholder="Город или метро"
                   />
                   <InputGroupAddon>
                     <MapPin size={16} />
@@ -127,11 +129,23 @@ export function HomePage() {
           )}
         </div>
         {matches.length ? (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {matches.map((offer, index) => (
-              <OfferCard key={offer.id} offer={offer} index={index} />
-            ))}
-          </div>
+          <>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {matches.slice(0, visibleCount).map((offer, index) => (
+                <OfferCard key={offer.id} offer={offer} index={index} />
+              ))}
+            </div>
+            {matches.length > visibleCount && (
+              <div className="mt-9 flex justify-center">
+                <Button
+                  variant="outline"
+                  onClick={() => setVisibleCount((count) => count + 24)}
+                >
+                  Показать ещё
+                </Button>
+              </div>
+            )}
+          </>
         ) : (
           <Empty className="rounded-2xl border border-dashed border-border bg-card">
             <EmptyHeader>

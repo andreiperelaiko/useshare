@@ -31,6 +31,7 @@ export function AddOfferPage() {
       description: String(form.get("description") || "").trim(),
       price: Number(form.get("price")),
       location: String(form.get("location") || "").trim(),
+      metro: String(form.get("metro") || "").trim() || undefined,
       image,
     }
     if (
@@ -141,6 +142,14 @@ export function AddOfferPage() {
                     />
                   </Field>
                 </div>
+                <Field>
+                  <FieldLabel htmlFor="offer-metro">Ближайшее метро</FieldLabel>
+                  <Input
+                    id="offer-metro"
+                    name="metro"
+                    placeholder="Например, Таганская"
+                  />
+                </Field>
                 <Field>
                   <FieldLabel htmlFor="offer-image">Фото вещи</FieldLabel>
                   <label

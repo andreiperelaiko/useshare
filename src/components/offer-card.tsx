@@ -25,7 +25,13 @@ export function ProductVisual({
       className={`product-visual product-visual--${index % 4} ${compact ? "product-visual--compact" : ""}`}
     >
       {offer.image ? (
-        <img src={offer.image} alt="" className="h-full w-full object-cover" />
+        <img
+          src={offer.image}
+          alt={offer.title}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
       ) : (
         <>
           <span className="product-orbit" />
@@ -63,7 +69,7 @@ export function OfferCard({
       <CardContent className="px-5">
         <p className="flex items-center gap-1 text-sm text-muted-foreground">
           <MapPin size={15} />
-          {offer.location}
+          {offer.metro ? `м. ${offer.metro}` : offer.location}
         </p>
       </CardContent>
       <CardFooter className="flex items-center justify-between border-t border-border/70 px-5 py-4">

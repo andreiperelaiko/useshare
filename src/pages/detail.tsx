@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/message-scroller"
 import { BackLink } from "@/components/header"
 import { ProductVisual } from "@/components/offer-card"
+import imageCredits from "@/data/image-credits.json"
 import {
   formatPrice,
   getMessages,
@@ -35,9 +36,15 @@ import {
 } from "@/lib/data"
 
 const stages = ["Заявка создана", "Заявка принята", "Предоплата"]
+type ImageCredit = {
+  source: string
+  artist: string
+  license: string
+  licenseUrl: string
+}
+
 export function DetailPage() {
-  const id =
-    new URLSearchParams(window.location.search).get("id") ?? "mousepad-1"
+  const id = new URLSearchParams(window.location.search).get("id") ?? "demo-001"
   const offer: Offer = getOffers().find((item) => item.id === id) ?? {
     id,
     title: "Велосипед",
@@ -45,6 +52,7 @@ export function DetailPage() {
     price: 10000,
     location: "Москва",
   }
+  const imageCredit = (imageCredits as Record<string, ImageCredit>)[id]
   const [messages, setMessages] = useState(() => getMessages(id))
   const [draft, setDraft] = useState("")
   const [stage, setStage] = useState(0)
@@ -86,7 +94,36 @@ export function DetailPage() {
                 <p className="flex items-center gap-2 text-sm text-muted-foreground">
                   <MapPin size={16} />
                   {offer.location}
+                  {offer.metro && ` · м. ${offer.metro}`}
                 </p>
+                {offer.isDemo && (
+                  <p className="text-xs text-muted-foreground">
+                    Демонстрационное объявление. Цена и доступность приведены
+                    для примера.
+                  </p>
+                )}
+                {imageCredit && (
+                  <p className="text-xs text-muted-foreground">
+                    Фото:{" "}
+                    <a
+                      href={imageCredit.source}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline"
+                    >
+                      {imageCredit.artist}
+                    </a>
+                    {" · "}
+                    <a
+                      href={imageCredit.licenseUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline"
+                    >
+                      {imageCredit.license}
+                    </a>
+                  </p>
+                )}
                 <p>
                   <strong className="text-2xl">
                     {formatPrice(offer.price)}
@@ -123,8 +160,9 @@ export function DetailPage() {
                             <MessageHeader>Use & Share</MessageHeader>
                             <Bubble variant="secondary">
                               <BubbleContent>
-                                Напишите владельцу, чтобы обсудить детали аренды
-                                и удобное время встречи.
+                                {offer.isDemo
+                                  ? "Это демонстрационное объявление. Сообщения сохраняются только в вашем браузере."
+                                  : "Напишите владельцу, чтобы обсудить детали аренды и удобное время встречи."}
                               </BubbleContent>
                             </Bubble>
                           </MessageContent>

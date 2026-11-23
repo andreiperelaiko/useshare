@@ -1,0 +1,602 @@
+{
+  "demo-001": {
+    "source": "https://commons.wikimedia.org/wiki/File:Canon_EOS_80D_(Unsplash).jpg",
+    "artist": "Hanson Lu hansonlujx",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-002": {
+    "source": "https://commons.wikimedia.org/wiki/File:Nikon_D750_01.jpg",
+    "artist": "Henry Söderlund from Helsinki, Finland",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-003": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sony_a7_III_Full-Frame_Mirror_less_camera_with_Sony_-_FE_24-105mm_F4_G_OSS_lens_02.jpg",
+    "artist": "Amitabha Gupta",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "demo-004": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fujifilm_X-T4_29_apr_2020a.jpg",
+    "artist": "昼落ち",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-005": {
+    "source": "https://commons.wikimedia.org/wiki/File:GoPro_Hero_(8009036215).jpg",
+    "artist": "umgeSEHen.eu from Berlin, Deutschland",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-006": {
+    "source": "https://commons.wikimedia.org/wiki/File:Polaroid_636_Close_Up_instant_camera.jpg",
+    "artist": "Yuri Litvinenko / 30pin",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-007": {
+    "source": "https://commons.wikimedia.org/wiki/File:Camera_Zenit_11_on_a_tripod.jpg",
+    "artist": "Dmitry Makeev",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-008": {
+    "source": "https://commons.wikimedia.org/wiki/File:Digitaliza%C3%A7%C3%A3o_Tridimensional_-_Ilumina%C3%A7%C3%A3o_Ring_Light.jpg",
+    "artist": "Marcele de Oliveira Gonçalves",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-009": {
+    "source": "https://commons.wikimedia.org/wiki/File:Canon_RF_50mm_F1.2L_USM,_with_lens_hood.jpg",
+    "artist": "Bobulous",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-010": {
+    "source": "https://commons.wikimedia.org/wiki/File:DJI_OSMO_mobile_(with_iPhone_7).jpg",
+    "artist": "ubahnverleih",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-011": {
+    "source": "https://commons.wikimedia.org/wiki/File:EPSON_CH-TW5400_LCD_PROJECTOR.jpg",
+    "artist": "Dinkun Chen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-012": {
+    "source": "https://commons.wikimedia.org/wiki/File:Projection-screen-home.jpg",
+    "artist": "Участник Wikimedia Commons",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-013": {
+    "source": "https://commons.wikimedia.org/wiki/File:JBL_CHARGE3_%E3%81%A8%E3%81%84%E3%81%86_Portable_Bluetooth_Speaker_%E3%80%81%E7%96%B2%E3%82%8C%E3%81%AA%E3%81%84%E9%9F%B3%E3%81%A7%E3%81%99%E3%81%AD%E3%80%82%E8%BB%8A%E8%BC%89%E3%81%99%E3%82%8B%E3%82%88%EF%BC%81_(28494681635).jpg",
+    "artist": "Masahiko OHKUBO from Kobe, Japan",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-014": {
+    "source": "https://commons.wikimedia.org/wiki/File:Shure_SM58_Microphone_(47651498671).jpg",
+    "artist": "bradjavernick",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-015": {
+    "source": "https://commons.wikimedia.org/wiki/File:Karaoke_Machine.jpg",
+    "artist": "GammeMartin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-016": {
+    "source": "https://commons.wikimedia.org/wiki/File:Disco_ball_in_home.jpg",
+    "artist": "Santeri Viinamäki",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-017": {
+    "source": "https://commons.wikimedia.org/wiki/File:LED_string_lights.jpg",
+    "artist": "Battuaruna",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-018": {
+    "source": "https://commons.wikimedia.org/wiki/File:Folding_Table_MET_125477.jpg",
+    "artist": "Участник Wikimedia Commons",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-019": {
+    "source": "https://commons.wikimedia.org/wiki/File:High_peak_frame_tent.JPG",
+    "artist": "Don Williams",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-020": {
+    "source": "https://commons.wikimedia.org/wiki/File:The_workspace_at_Oliphant_Studio,_Brooklyn,_New_York_(2025)._Hand-painted_photography_backdrops_in_progress,_showing_the_painting_and_drying_process_on_the_studio_floor.jpg",
+    "artist": "Paintingart2025",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-021": {
+    "source": "https://commons.wikimedia.org/wiki/File:Panasonic_Cordless_Drill_%26_Driver_EY1DD2,_Ottobrunn_(20250410-P1046293).jpg",
+    "artist": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+  },
+  "demo-022": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bosch_cordless_Battdrill_14.4V_blue_series.jpg",
+    "artist": "Luigi Zanasi",
+    "license": "CC BY-SA 2.0 ca",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/ca/deed.en"
+  },
+  "demo-023": {
+    "source": "https://commons.wikimedia.org/wiki/File:Makita_HR3210FCT_Rotary_Hammer_(4540819198).jpg",
+    "artist": "Mark Hunter",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-024": {
+    "source": "https://commons.wikimedia.org/wiki/File:Milwaukee_6266-22_loaded.jpg",
+    "artist": "National Institute for Occupational Safety and Health",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-025": {
+    "source": "https://commons.wikimedia.org/wiki/File:Circular_Saw.jpg",
+    "artist": "Hychika",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-026": {
+    "source": "https://commons.wikimedia.org/wiki/File:Lijadora_orbital_L%C3%BCsqtoff.jpg",
+    "artist": "Just a Man",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "demo-027": {
+    "source": "https://commons.wikimedia.org/wiki/File:H%C3%B6gtryckstv%C3%A4tt_-_Pressure_washer_-_Ystad-2011.jpg",
+    "artist": "Foto: Jonn Leffmann",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "demo-028": {
+    "source": "https://commons.wikimedia.org/wiki/File:Step-ladder.JPG",
+    "artist": "Zipacna1",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "demo-029": {
+    "source": "https://commons.wikimedia.org/wiki/File:Construction_laser.jpg",
+    "artist": "Jensens",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-030": {
+    "source": "https://commons.wikimedia.org/wiki/File:Ceramic-tile-cutter.jpg",
+    "artist": "Billbeee at en.wikipedia",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  "demo-031": {
+    "source": "https://commons.wikimedia.org/wiki/File:Zagedan_Ridge,_Camping_tent,_Caucasus_Mountains.jpg",
+    "artist": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "demo-032": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mummy_bag.jpg",
+    "artist": "Smack (talk)",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-033": {
+    "source": "https://commons.wikimedia.org/wiki/File:Hobo_stove_convection_2.jpg",
+    "artist": "Dontpanic (Dogcow at German Wikipedia)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "demo-034": {
+    "source": "https://commons.wikimedia.org/wiki/File:A_backpack_with_trekking_poles_and_shoes.jpg",
+    "artist": "SGrabarczuk (WMF)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-035": {
+    "source": "https://commons.wikimedia.org/wiki/File:Inflatable_kayak_at_Manning_River.jpg",
+    "artist": "JaredMcKenzie",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-036": {
+    "source": "https://commons.wikimedia.org/wiki/File:Stand_up_paddle_board,_Portobello_-_geograph.org.uk_-_7601455.jpg",
+    "artist": "Richard Webb",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "demo-037": {
+    "source": "https://commons.wikimedia.org/wiki/File:Cream_city_bicycle_at_a_bike_rack_near_the_Esta%C3%A7%C3%A3o_da_Luz,_S%C3%A3o_Paulo.jpg",
+    "artist": "Wilfredor",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-038": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bicycle_white_helmet_from_bikemate.jpg",
+    "artist": "Afifa Afrin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-039": {
+    "source": "https://commons.wikimedia.org/wiki/File:Trekking_poles_9.99.jpg",
+    "artist": "Sarang",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-040": {
+    "source": "https://commons.wikimedia.org/wiki/File:Navy_binoculars.jpg",
+    "artist": "U.S. Navy photo by Airman Ricardo J. Reyes.",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-041": {
+    "source": "https://commons.wikimedia.org/wiki/File:Robot_Vacuum_2016_(31606445890).jpg",
+    "artist": "Ryan McBride",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-042": {
+    "source": "https://commons.wikimedia.org/wiki/File:Truck_mount_steam_carpet_cleaner.JPG",
+    "artist": "Dwight Burdette",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "demo-043": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bissell_spot_clean_pro.jpg",
+    "artist": "Artoria2e5",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "demo-044": {
+    "source": "https://commons.wikimedia.org/wiki/File:Air_dehumidifier_with_a_European_plug.jpg",
+    "artist": "Photograph by Mike Peel (www.mikepeel.net).",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-045": {
+    "source": "https://commons.wikimedia.org/wiki/File:Air_Purifier_(Levoit_LV-H133)_(49317867758).jpg",
+    "artist": "Home Air Quality Guides",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "demo-046": {
+    "source": "https://commons.wikimedia.org/wiki/File:Clothes_Steamer_(51012791483).jpg",
+    "artist": "ajay_suresh",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-047": {
+    "source": "https://commons.wikimedia.org/wiki/File:Modern_Sewing_Machine_(15453886961).jpg",
+    "artist": "I G",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-048": {
+    "source": "https://commons.wikimedia.org/wiki/File:Electric_steam_iron.jpg",
+    "artist": "Colin",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-049": {
+    "source": "https://commons.wikimedia.org/wiki/File:Floor_fan_Matsui_EF20TRS.jpg",
+    "artist": "Elgiganten",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "demo-050": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portable_infrared_electric_heater_used_on_a_film_set.jpg",
+    "artist": "Siarhei Besarab",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-051": {
+    "source": "https://commons.wikimedia.org/wiki/File:Krups_Vivo_F880_home_espresso_maker.jpg",
+    "artist": "User Mike1024 on en.wikipedia",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-052": {
+    "source": "https://commons.wikimedia.org/wiki/File:Coffee_grinder_BW_2025-08-17_14-47-13.jpg",
+    "artist": "Berthold Werner",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-053": {
+    "source": "https://commons.wikimedia.org/wiki/File:Pi%C3%B1a_Coladas_made_in_home_kitchen_blender_-_1.jpg",
+    "artist": "Infrogmation of New Orleans",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-054": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tomato_in_food_dehydrator.jpg",
+    "artist": "Originally uploaded by Latch (Transferred by Szymon Żywicki)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-055": {
+    "source": "https://commons.wikimedia.org/wiki/File:Waffle_Maker.jpg",
+    "artist": "Donovan Govan.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "demo-056": {
+    "source": "https://commons.wikimedia.org/wiki/File:Pressure_multicooker.jpg",
+    "artist": "Tucvbif",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-057": {
+    "source": "https://commons.wikimedia.org/wiki/File:Full_cheese_fondue_set_-_in_Switzerland.JPG",
+    "artist": "EquatorialSky at English Wikipedia",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-058": {
+    "source": "https://commons.wikimedia.org/wiki/File:Electric_meat_grinder_-_Oster.jpg",
+    "artist": "Cantons-de-l'Est",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-059": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bread_maker_chamber_without_bread_pan.jpg",
+    "artist": "Buckaroo bob 91",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-060": {
+    "source": "https://commons.wikimedia.org/wiki/File:Electric_ice_cream_maker.jpg",
+    "artist": "Moproducer",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-061": {
+    "source": "https://commons.wikimedia.org/wiki/File:Stroller_or_pram_pic5.JPG",
+    "artist": "Alf van Beem",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-062": {
+    "source": "https://commons.wikimedia.org/wiki/File:Child_car_seat.JPG",
+    "artist": "Cschirp",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  "demo-063": {
+    "source": "https://commons.wikimedia.org/wiki/File:Baby_Monitor_(51817515261).jpg",
+    "artist": "ajay_suresh",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-064": {
+    "source": "https://commons.wikimedia.org/wiki/File:Baby_High_Chair_(50841207558).jpg",
+    "artist": "ajay_suresh",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-065": {
+    "source": "https://commons.wikimedia.org/wiki/File:Lego_City_Set_3367_Space_Shuttle.jpg",
+    "artist": "Michael Styne from Averill Park, NY, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "demo-066": {
+    "source": "https://commons.wikimedia.org/wiki/File:Baby_sling_in_green_2.jpg",
+    "artist": "Tomasyuan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-067": {
+    "source": "https://commons.wikimedia.org/wiki/File:Suommo-La-Perla-Crib-1.jpg",
+    "artist": "Suommo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-068": {
+    "source": "https://commons.wikimedia.org/wiki/File:Kids_balance_bike_(Kinderlaufrad).jpg",
+    "artist": "Showing_a_balance_bike_does_not_include_pedals.jpg: Jeremy Miles derivative work: Trofobi (talk)",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "demo-069": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fun_Ride_Kids_Scooter.jpg",
+    "artist": "Julyroy",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-070": {
+    "source": "https://commons.wikimedia.org/wiki/File:Baby_weight_Necker_2014.jpg",
+    "artist": "Oliver H",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-071": {
+    "source": "https://commons.wikimedia.org/wiki/File:Yoga_Mat_Made_of_Carpet_Underlay.jpg",
+    "artist": "Ian Alexander",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-072": {
+    "source": "https://commons.wikimedia.org/wiki/File:A_close-up_view_of_a_set_of_heavy_dumbbells.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-073": {
+    "source": "https://commons.wikimedia.org/wiki/File:Treadmill_from_Viking_Sport,_front.jpg",
+    "artist": "W.carter",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "demo-074": {
+    "source": "https://commons.wikimedia.org/wiki/File:Magnetic_resistance_stationary_bicycle_exercise_bike.JPG",
+    "artist": "T g7",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "demo-075": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tennis_Racket_and_Balls.jpg",
+    "artist": "Vladsinger at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "demo-076": {
+    "source": "https://commons.wikimedia.org/wiki/File:Badminton_racket.jpg",
+    "artist": "DEEPAN RAJA .M",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-077": {
+    "source": "https://commons.wikimedia.org/wiki/File:Snowboard-In-The-Snow-2008.jpg",
+    "artist": "Kham Tran - www.khamtran.com",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-078": {
+    "source": "https://commons.wikimedia.org/wiki/File:Alpine_skis_slalom_multiradius_01.jpg",
+    "artist": "Chianti",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-079": {
+    "source": "https://commons.wikimedia.org/wiki/File:Typical_inline_skates_with_gear.png",
+    "artist": "Brandenads",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-080": {
+    "source": "https://commons.wikimedia.org/wiki/File:Basketball_(Ball).jpg",
+    "artist": "Участник Wikimedia Commons",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "demo-081": {
+    "source": "https://commons.wikimedia.org/wiki/File:Guitarra_el%C3%A9ctrica.JPG",
+    "artist": "Rjcastillo",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "demo-082": {
+    "source": "https://commons.wikimedia.org/wiki/File:00_Walden_Acoustic_Guitar_D310e_01.jpg",
+    "artist": "Elmschrat",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-083": {
+    "source": "https://commons.wikimedia.org/wiki/File:Solina_String_Ensemble_Keyboard_Detail.jpg",
+    "artist": "MFbay",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-084": {
+    "source": "https://commons.wikimedia.org/wiki/File:Digital-piano-423.jpg",
+    "artist": "Pianomangeorge",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-085": {
+    "source": "https://commons.wikimedia.org/wiki/File:17_inch_pocket_ukulele_branded_%22ultnice%22.jpg",
+    "artist": "Zapyon",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-086": {
+    "source": "https://commons.wikimedia.org/wiki/File:Violin_VL100.jpg",
+    "artist": "Just plain Bill",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-087": {
+    "source": "https://commons.wikimedia.org/wiki/File:Yamaha_Saxophone_YSS-875_EX.jpg",
+    "artist": "Yamaha Corporation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-088": {
+    "source": "https://commons.wikimedia.org/wiki/File:Electronic_drum_kit_Roland.jpg",
+    "artist": "Rob DiCaterino",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  "demo-089": {
+    "source": "https://commons.wikimedia.org/wiki/File:30daysinVR_XR_DJ-VJ_midi_controller.jpg",
+    "artist": "UXRZONE",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-090": {
+    "source": "https://commons.wikimedia.org/wiki/File:A_close_view_of_a_vintage_guitar_amplifier.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "demo-091": {
+    "source": "https://commons.wikimedia.org/wiki/File:HP_laptop_on_a_table.jpg",
+    "artist": "Verified legend",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-092": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tablet_computer.jpg",
+    "artist": "KK IN HK",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-093": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sony-PlayStation-PS3-SuperSlim-Console-BL.jpg",
+    "artist": "Evan-Amos",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "demo-094": {
+    "source": "https://commons.wikimedia.org/wiki/File:Virtual_reality_headset.jpg",
+    "artist": "FloppaIngénieur",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "demo-095": {
+    "source": "https://commons.wikimedia.org/wiki/File:EBook_Reader_Tolino_Vision_-_Frontansicht.jpg",
+    "artist": "http://www.ebook-reader-vergleich.de",
+    "license": "CC BY-SA 3.0 de",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+  },
+  "demo-096": {
+    "source": "https://commons.wikimedia.org/wiki/File:RGB_desktop_computer_setup_with_keyboard_and_monitor.jpg",
+    "artist": "SankalpSasnur",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-097": {
+    "source": "https://commons.wikimedia.org/wiki/File:Canon_imageRUNNER_ADVANCE_DX_C5860_Color_Laser_Multifunction_Printer_%26_Canon_imageRUNNER_ADVANCE_DX_C7770_Color_Laser_Multifunction_Printer.jpg",
+    "artist": "Dinkun Chen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-098": {
+    "source": "https://commons.wikimedia.org/wiki/File:Trust_Flat_Scan_USB_19200.jpg",
+    "artist": "Bultro",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "demo-099": {
+    "source": "https://commons.wikimedia.org/wiki/File:ELECOM_WRC-300FEBK_WPS_WiFi_router_2.jpg",
+    "artist": "Syced",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "demo-100": {
+    "source": "https://commons.wikimedia.org/wiki/File:Goal_Zero_Yeti_1400_Lithium_Portable_Power_Station_with_WiFi_Battery_Pack_with_MacBook_Pro_-_USB-C_Power_Delivery_Specification_(PD_spec)_(43467687445).jpg",
+    "artist": "Tony Webster from Minneapolis, Minnesota, United States",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  }
+}
