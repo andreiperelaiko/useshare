@@ -12,3 +12,14 @@ export type Offer = {
 
 export type Profile = { name: string; email: string; phone: string }
 export type ChatMessage = { id: string; text: string; time: string }
+
+export type RentalRequest = {
+  id: string
+  title: string
+  description: string
+  location: string
+  budget?: number
+  startDate?: string
+  endDate?: string
+  createdAt: string
+}

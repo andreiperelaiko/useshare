@@ -1,11 +1,12 @@
 import { demoOffers } from "@/data/demo-offers"
-import type { ChatMessage, Offer, Profile } from "@/lib/types"
+import type { ChatMessage, Offer, Profile, RentalRequest } from "@/lib/types"
 
-export type { ChatMessage, Offer, Profile } from "@/lib/types"
+export type { ChatMessage, Offer, Profile, RentalRequest } from "@/lib/types"
 
 const OFFER_KEY = "use-and-share-offers-v2"
 const PROFILE_KEY = "use-and-share-profile-v2"
 const MESSAGE_KEY = "use-and-share-messages-v1"
+const RENTAL_REQUEST_KEY = "use-and-share-rental-requests-v1"
 
 function read<T>(key: string, fallback: T): T {
   try {
@@ -26,6 +27,17 @@ export function getOffers(): Offer[] {
 
 export function saveOffer(offer: Offer) {
   localStorage.setItem(OFFER_KEY, JSON.stringify([offer, ...getOwnOffers()]))
+}
+
+export function getRentalRequests(): RentalRequest[] {
+  return read<RentalRequest[]>(RENTAL_REQUEST_KEY, [])
+}
+
+export function saveRentalRequest(request: RentalRequest) {
+  localStorage.setItem(
+    RENTAL_REQUEST_KEY,
+    JSON.stringify([request, ...getRentalRequests()])
+  )
 }
 
 export function getProfile(): Profile {

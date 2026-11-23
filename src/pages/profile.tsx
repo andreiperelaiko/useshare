@@ -13,9 +13,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BackLink } from "@/components/header"
 import { ProfileOfferCard } from "@/components/profile-offer-card"
 import { ProfileSettings } from "@/components/profile-settings"
+import { RentalRequestCard } from "@/components/rental-request-card"
 import {
   getOwnOffers,
   getProfile,
+  getRentalRequests,
   saveProfile,
   type Offer,
   type Profile,
@@ -37,6 +39,7 @@ export function ProfilePage() {
       : "borrowing"
   const [profile, setProfile] = useState(getProfile)
   const [ownOffers] = useState(getOwnOffers)
+  const [rentalRequests] = useState(getRentalRequests)
 
   function updateProfile(next: Profile) {
     saveProfile(next)
@@ -112,7 +115,44 @@ export function ProfilePage() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="borrowing">
-          <div className="mb-6">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">
+                Мои заявки
+              </h2>
+              <p className="mt-1 text-muted-foreground">
+                Вещи, которые вы хотите взять в аренду.
+              </p>
+            </div>
+            <Button render={<a href="/add-request" />} nativeButton={false}>
+              <Plus data-icon="inline-start" />
+              Написать заявку
+            </Button>
+          </div>
+          {rentalRequests.length ? (
+            <div className="grid gap-4 md:grid-cols-2">
+              {rentalRequests.map((request) => (
+                <RentalRequestCard key={request.id} request={request} />
+              ))}
+            </div>
+          ) : (
+            <Empty className="rounded-2xl border border-dashed border-border bg-card">
+              <EmptyHeader>
+                <EmptyMedia variant="icon">
+                  <Plus />
+                </EmptyMedia>
+                <EmptyTitle>Пока нет заявок</EmptyTitle>
+                <EmptyDescription>
+                  Опишите вещь, которую хотите найти, и укажите удобные условия
+                  аренды.
+                </EmptyDescription>
+              </EmptyHeader>
+              <Button render={<a href="/add-request" />} nativeButton={false}>
+                Написать заявку
+              </Button>
+            </Empty>
+          )}
+          <div className="mt-10 mb-6">
             <h2 className="text-2xl font-semibold tracking-tight">
               Мои аренды
             </h2>

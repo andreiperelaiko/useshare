@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { MapPin, Search } from "lucide-react"
+import { MapPin, Search, SquarePen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -51,9 +51,14 @@ export function HomePage() {
               примера.
             </p>
           </div>
-          <span className="brand-script hidden text-4xl text-primary/80 sm:block">
-            Share more, own less
-          </span>
+          <Button
+            variant="outline"
+            render={<a href="/add-request" />}
+            nativeButton={false}
+          >
+            <SquarePen data-icon="inline-start" />
+            Написать заявку на аренду
+          </Button>
         </div>
         <Card className="mb-8 border-border/70 bg-card/90 shadow-sm">
           <CardContent>
@@ -158,6 +163,9 @@ export function HomePage() {
               </EmptyDescription>
             </EmptyHeader>
             <EmptyContent>
+              <Button render={<a href="/add-request" />} nativeButton={false}>
+                Написать заявку
+              </Button>
               <Button
                 variant="outline"
                 onClick={() => {
