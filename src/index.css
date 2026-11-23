@@ -49,8 +49,9 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Use & Share light palette. */
+/* Default warm palette. Semantic tokens let every component follow the selection. */
 :root {
+  color-scheme: light;
   --background: #f8f3ec;
   --foreground: #2d3027;
   --card: #fffdf9;
@@ -83,6 +84,76 @@
   --sidebar-accent-foreground: #3f573b;
   --sidebar-border: #e4d9ca;
   --sidebar-ring: #718d6a;
+}
+
+/* High-contrast grayscale palette. */
+:root[data-palette="monochrome"] {
+  --background: #f7f7f7;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #171717;
+  --primary-foreground: #ffffff;
+  --secondary: #e9e9e9;
+  --secondary-foreground: #242424;
+  --muted: #eeeeee;
+  --muted-foreground: #626262;
+  --accent: #e2e2e2;
+  --accent-foreground: #171717;
+  --destructive: #585858;
+  --border: #d4d4d4;
+  --input: #d4d4d4;
+  --ring: #404040;
+  --chart-1: #292929;
+  --chart-2: #555555;
+  --chart-3: #777777;
+  --chart-4: #999999;
+  --chart-5: #bbbbbb;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #171717;
+  --sidebar-primary: #171717;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2e2e2;
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: #d4d4d4;
+  --sidebar-ring: #404040;
+}
+
+/* Cool neutral palette for a more universal look. */
+:root[data-palette="neutral"] {
+  --background: #f6f7f9;
+  --foreground: #202936;
+  --card: #ffffff;
+  --card-foreground: #202936;
+  --popover: #ffffff;
+  --popover-foreground: #202936;
+  --primary: #435e73;
+  --primary-foreground: #ffffff;
+  --secondary: #e9eef2;
+  --secondary-foreground: #354b5d;
+  --muted: #edf1f4;
+  --muted-foreground: #63717d;
+  --accent: #dce7ed;
+  --accent-foreground: #29485d;
+  --destructive: #a14343;
+  --border: #d7dfe6;
+  --input: #d7dfe6;
+  --ring: #658197;
+  --chart-1: #435e73;
+  --chart-2: #718da1;
+  --chart-3: #a4b4c0;
+  --chart-4: #647d88;
+  --chart-5: #c5d1d9;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #202936;
+  --sidebar-primary: #435e73;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dce7ed;
+  --sidebar-accent-foreground: #29485d;
+  --sidebar-border: #d7dfe6;
+  --sidebar-ring: #658197;
 }
 
 @layer base {
@@ -180,6 +251,31 @@ body {
   background: #fff9f0aa;
   box-shadow: 10px 14px 30px #5c4d3922;
   transform: rotate(-12deg);
+}
+
+/* Keep illustration placeholders and listing photos consistent with the palette. */
+:root[data-palette="monochrome"] .product-visual,
+:root[data-palette="monochrome"] .product-visual--1,
+:root[data-palette="monochrome"] .product-visual--2,
+:root[data-palette="monochrome"] .product-visual--3 {
+  background: #dedede;
+  color: #555555;
+}
+:root[data-palette="monochrome"] .product-icon {
+  background: #ffffffaa;
+}
+:root[data-palette="monochrome"] .product-visual img {
+  filter: grayscale(1);
+}
+:root[data-palette="neutral"] .product-visual,
+:root[data-palette="neutral"] .product-visual--1,
+:root[data-palette="neutral"] .product-visual--2,
+:root[data-palette="neutral"] .product-visual--3 {
+  background: #dce4ea;
+  color: #607786;
+}
+:root[data-palette="neutral"] .product-icon {
+  background: #ffffffaa;
 }
 .product-caption {
   position: absolute;

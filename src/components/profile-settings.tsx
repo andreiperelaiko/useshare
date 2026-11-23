@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react"
-import { Settings2 } from "lucide-react"
+import { Check, Palette, Settings2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -11,6 +11,7 @@ import {
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import type { Profile } from "@/lib/data"
+import { getPalette, palettes, setPalette } from "@/lib/palette"
 
 type ProfileSettingsProps = {
   profile: Profile
@@ -20,6 +21,12 @@ type ProfileSettingsProps = {
 export function ProfileSettings({ profile, onSave }: ProfileSettingsProps) {
   const [draft, setDraft] = useState(profile)
   const [saved, setSaved] = useState(false)
+  const [selectedPalette, setSelectedPalette] = useState(getPalette)
+
+  function choosePalette(palette: (typeof palettes)[number]["id"]) {
+    setPalette(palette)
+    setSelectedPalette(palette)
+  }
 
   function update(key: keyof Profile, value: string) {
     setDraft((current) => ({ ...current, [key]: value }))
@@ -96,6 +103,54 @@ export function ProfileSettings({ profile, onSave }: ProfileSettingsProps) {
               </div>
             </FieldGroup>
           </form>
+        </CardContent>
+      </Card>
+      <Card className="border-border/70">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Palette size={20} />
+            Цветовая палитра
+          </CardTitle>
+          <CardDescription>
+            Оформление меняется сразу на всех страницах и сохраняется в этом
+            браузере.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div
+            className="grid gap-3 sm:grid-cols-3"
+            role="group"
+            aria-label="Цветовая палитра"
+          >
+            {palettes.map((palette) => (
+              <button
+                key={palette.id}
+                type="button"
+                aria-pressed={selectedPalette === palette.id}
+                onClick={() => choosePalette(palette.id)}
+                className="flex min-h-36 flex-col items-start rounded-xl border border-border bg-card p-4 text-left transition-colors hover:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring aria-pressed:border-primary aria-pressed:ring-2 aria-pressed:ring-primary/30"
+              >
+                <span className="mb-4 flex gap-1.5" aria-hidden="true">
+                  {palette.swatches.map((swatch) => (
+                    <span
+                      key={swatch}
+                      className="size-6 rounded-full border border-foreground/15"
+                      style={{ backgroundColor: swatch }}
+                    />
+                  ))}
+                </span>
+                <span className="flex w-full items-center justify-between gap-2 font-medium">
+                  {palette.name}
+                  {selectedPalette === palette.id && (
+                    <Check size={17} aria-hidden="true" />
+                  )}
+                </span>
+                <span className="mt-1 text-sm text-muted-foreground">
+                  {palette.description}
+                </span>
+              </button>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>
