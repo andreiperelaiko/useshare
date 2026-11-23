@@ -74,7 +74,7 @@ export function AddRequestPage() {
 
   return (
     <main className="page-shell py-9 pb-20">
-      <BackLink href="/page?tab=borrowing" label="К моим заявкам" />
+      <BackLink href="/page?tab=borrowing" label="К моим запросам" />
       <div className="mb-8 max-w-2xl">
         <span className="eyebrow">
           <Search size={14} /> Найдите нужную вещь

@@ -2,23 +2,35 @@ import { CalendarDays, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { formatPrice, type RentalRequest } from "@/lib/data"
+import { cn } from "cn"
 
 const formatDate = (date: string) =>
   new Intl.DateTimeFormat("ru-RU", { day: "numeric", month: "long" }).format(
     new Date(`${date}T12:00:00`)
   )
 
-export function RentalRequestCard({ request }: { request: RentalRequest }) {
+export function RentalRequestCard({
+  request,
+  compact = false,
+}: {
+  request: RentalRequest
+  compact?: boolean
+}) {
   return (
     <Card className="border-border/70 shadow-none">
       <CardHeader className="gap-3">
         <Badge variant="secondary" className="w-fit">
-          Ищу вещь
+          {request.isDemo ? "Демо-запрос" : "Ищу вещь"}
         </Badge>
         <CardTitle className="text-lg">{request.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        <p className="text-sm leading-6 whitespace-pre-wrap text-muted-foreground">
+        <p
+          className={cn(
+            "text-sm leading-6 whitespace-pre-wrap text-muted-foreground",
+            compact && "line-clamp-3"
+          )}
+        >
           {request.description}
         </p>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">

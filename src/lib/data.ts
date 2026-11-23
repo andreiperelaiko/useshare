@@ -1,4 +1,5 @@
 import { demoOffers } from "@/data/demo-offers"
+import { demoRequests } from "@/data/demo-requests"
 import type { ChatMessage, Offer, Profile, RentalRequest } from "@/lib/types"
 
 export type { ChatMessage, Offer, Profile, RentalRequest } from "@/lib/types"
@@ -31,6 +32,10 @@ export function saveOffer(offer: Offer) {
 
 export function getRentalRequests(): RentalRequest[] {
   return read<RentalRequest[]>(RENTAL_REQUEST_KEY, [])
+}
+
+export function getCatalogRequests(): RentalRequest[] {
+  return [...getRentalRequests(), ...demoRequests]
 }
 
 export function saveRentalRequest(request: RentalRequest) {

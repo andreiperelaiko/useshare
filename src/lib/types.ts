@@ -22,4 +22,5 @@ export type RentalRequest = {
   startDate?: string
   endDate?: string
   createdAt: string
+  isDemo?: boolean
 }

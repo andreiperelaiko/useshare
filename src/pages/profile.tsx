@@ -19,17 +19,8 @@ import {
   getProfile,
   getRentalRequests,
   saveProfile,
-  type Offer,
   type Profile,
 } from "@/lib/data"
-
-const borrowedOffers: Offer[] = [1, 2].map((number) => ({
-  id: `bike-${number}`,
-  title: "Велосипед",
-  description: "Городской велосипед",
-  price: 10000,
-  location: "Москва",
-}))
 
 export function ProfilePage() {
   const requestedTab = new URLSearchParams(window.location.search).get("tab")
@@ -102,15 +93,24 @@ export function ProfilePage() {
       <Tabs defaultValue={initialTab}>
         <TabsList
           variant="line"
-          className="mb-8 w-full justify-start gap-4 border-b border-border sm:gap-8"
+          className="mb-8 w-full justify-start gap-1 border-b border-border sm:gap-8"
         >
-          <TabsTrigger value="borrowing" className="px-3 py-3">
-            Я беру
+          <TabsTrigger
+            value="borrowing"
+            className="px-2 py-3 text-xs sm:px-3 sm:text-sm"
+          >
+            Мои запросы
           </TabsTrigger>
-          <TabsTrigger value="renting" className="px-3 py-3">
-            Я сдаю
+          <TabsTrigger
+            value="renting"
+            className="px-2 py-3 text-xs sm:px-3 sm:text-sm"
+          >
+            Мои предложения
           </TabsTrigger>
-          <TabsTrigger value="settings" className="px-3 py-3">
+          <TabsTrigger
+            value="settings"
+            className="px-2 py-3 text-xs sm:px-3 sm:text-sm"
+          >
             Настройки
           </TabsTrigger>
         </TabsList>
@@ -118,7 +118,7 @@ export function ProfilePage() {
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">
-                Мои заявки
+                Мои запросы
               </h2>
               <p className="mt-1 text-muted-foreground">
                 Вещи, которые вы хотите взять в аренду.
@@ -141,7 +141,7 @@ export function ProfilePage() {
                 <EmptyMedia variant="icon">
                   <Plus />
                 </EmptyMedia>
-                <EmptyTitle>Пока нет заявок</EmptyTitle>
+                <EmptyTitle>Пока нет запросов</EmptyTitle>
                 <EmptyDescription>
                   Опишите вещь, которую хотите найти, и укажите удобные условия
                   аренды.
@@ -152,25 +152,6 @@ export function ProfilePage() {
               </Button>
             </Empty>
           )}
-          <div className="mt-10 mb-6">
-            <h2 className="text-2xl font-semibold tracking-tight">
-              Мои аренды
-            </h2>
-            <p className="mt-1 text-muted-foreground">
-              Вещи, которые сейчас нужны вам.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {borrowedOffers.map((offer, index) => (
-              <ProfileOfferCard
-                key={offer.id}
-                offer={offer}
-                status="Активная аренда"
-                details="16–20 октября · Москва"
-                index={index}
-              />
-            ))}
-          </div>
         </TabsContent>
         <TabsContent value="renting">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
