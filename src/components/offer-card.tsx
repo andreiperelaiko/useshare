@@ -55,31 +55,31 @@ export function OfferCard({
   const href = `/page-2?id=${encodeURIComponent(offer.id)}`
 
   return (
-    <Card className="group overflow-hidden border-border/70 bg-card p-0 shadow-none transition hover:-translate-y-1 hover:shadow-lg">
+    <Card className="group h-full gap-0 overflow-hidden bg-card p-0 shadow-sm ring-0 transition duration-200 hover:-translate-y-1 hover:shadow-lg">
       <a href={href} className="block" aria-label={`Открыть ${offer.title}`}>
         <ProductVisual offer={offer} index={index} />
       </a>
-      <CardHeader className="px-5 pt-5">
-        <CardTitle className="text-lg leading-snug">
+      <CardHeader className="px-5 pt-4 pb-2">
+        <CardTitle className="line-clamp-2 text-lg leading-snug">
           <a href={href} className="hover:text-primary">
             {offer.title}
           </a>
         </CardTitle>
       </CardHeader>
-      <CardContent className="px-5">
+      <CardContent className="px-5 pb-3">
         <p className="flex items-center gap-1 text-sm text-muted-foreground">
-          <MapPin size={15} />
+          <MapPin size={15} className="shrink-0" />
           {offer.metro ? `м. ${offer.metro}` : offer.location}
         </p>
       </CardContent>
-      <CardFooter className="flex items-center justify-between border-t border-border/70 px-5 py-4">
+      <CardFooter className="mt-auto flex items-center justify-between border-t-0 bg-card px-5 py-4">
         <div>
           <strong className="text-lg">{formatPrice(offer.price)}</strong>
           <span className="ml-1 text-xs text-muted-foreground">/ день</span>
         </div>
         <a
           href={href}
-          className="inline-flex size-9 items-center justify-center rounded-full border border-border transition group-hover:bg-primary group-hover:text-primary-foreground"
+          className="inline-flex size-9 items-center justify-center rounded-full bg-accent text-accent-foreground transition group-hover:bg-primary group-hover:text-primary-foreground"
           aria-label={`Подробнее: ${offer.title}`}
         >
           <ArrowUpRight size={17} />

@@ -17,7 +17,7 @@ export function RentalRequestCard({
   compact?: boolean
 }) {
   return (
-    <Card className="border-border/70 shadow-none">
+    <Card className="shadow-sm ring-0">
       <CardHeader className="gap-3">
         <Badge variant="secondary" className="w-fit">
           {request.isDemo ? "Демо-запрос" : "Ищу вещь"}

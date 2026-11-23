@@ -18,7 +18,7 @@ export function ProfileOfferCard({
   index = 0,
 }: ProfileOfferCardProps) {
   return (
-    <Card className="overflow-hidden border-border/70 p-0 shadow-none">
+    <Card className="overflow-hidden p-0 shadow-sm ring-0">
       <div className="flex min-h-36">
         <div className="w-36 shrink-0 sm:w-44">
           <ProductVisual offer={offer} index={index} compact />
