@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+/* shadcn semantic tokens and responsive radius scale. */
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: "Geist Variable", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Use & Share light palette. */
+:root {
+  --background: #f8f3ec;
+  --foreground: #2d3027;
+  --card: #fffdf9;
+  --card-foreground: #2d3027;
+  --popover: #fffdf9;
+  --popover-foreground: #2d3027;
+  --primary: #526b4c;
+  --primary-foreground: #fffdf9;
+  --secondary: #efe3d4;
+  --secondary-foreground: #4a4337;
+  --muted: #f1eae1;
+  --muted-foreground: #77776d;
+  --accent: #e8ecdf;
+  --accent-foreground: #3f573b;
+  --destructive: #ad493d;
+  --border: #e4d9ca;
+  --input: #e4d9ca;
+  --ring: #718d6a;
+  --chart-1: #d6c0a3;
+  --chart-2: #8ea582;
+  --chart-3: #a7806f;
+  --chart-4: #6d8563;
+  --chart-5: #a6a28b;
+  --radius: 0.875rem;
+  --sidebar: #fffdf9;
+  --sidebar-foreground: #2d3027;
+  --sidebar-primary: #526b4c;
+  --sidebar-primary-foreground: #fffdf9;
+  --sidebar-accent: #e8ecdf;
+  --sidebar-accent-foreground: #3f573b;
+  --sidebar-border: #e4d9ca;
+  --sidebar-ring: #718d6a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+/* Site typography and layout. */
+@font-face {
+  font-family: Yesteryear;
+  src: url("/fonts/Yesteryear-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-width: 320px;
+}
+.page-shell {
+  width: min(100% - 3rem, 1320px);
+  margin-inline: auto;
+}
+.brand-script {
+  font-family: Yesteryear, cursive;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+/* Reusable illustration for listings without photos. */
+.product-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 220px;
+  overflow: hidden;
+  background: #d6c1ad;
+  color: #6e5c4e;
+}
+.product-visual--1 {
+  background: #e2d3be;
+  color: #927358;
+}
+.product-visual--2 {
+  background: #c9d2be;
+  color: #66775e;
+}
+.product-visual--3 {
+  background: #d9bfad;
+  color: #856550;
+}
+.product-visual--compact {
+  height: 100%;
+  min-height: 150px;
+}
+.product-orbit {
+  position: absolute;
+  width: 62%;
+  aspect-ratio: 1;
+  border: 1px solid currentColor;
+  opacity: 0.36;
+  border-radius: 50%;
+  transform: rotate(25deg) scaleX(1.3);
+}
+.product-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 20%;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.product-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 27%;
+  aspect-ratio: 1;
+  border-radius: 30%;
+  background: #fff9f0aa;
+  box-shadow: 10px 14px 30px #5c4d3922;
+  transform: rotate(-12deg);
+}
+.product-caption {
+  position: absolute;
+  bottom: 16px;
+  font:
+    italic 1rem Georgia,
+    serif;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+}
+.product-visual--compact .product-caption {
+  display: none;
+}
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 2rem, 1320px);
+  }
+  /* Reusable illustration for listings without photos. */
+  .product-visual {
+    height: 190px;
+  }
+  .product-visual--compact {
+    height: 100%;
+  }
+}
