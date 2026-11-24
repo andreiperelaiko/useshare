@@ -7,10 +7,10 @@ services:
     ports:
       - "127.0.0.1:${USESHARE_PORT:-4173}:4173"
     volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./index.html:/app/index.html
-      - ./vite.config.ts:/app/vite.config.ts
+      - ./web/src:/app/src
+      - ./web/public:/app/public
+      - ./web/index.html:/app/index.html
+      - ./web/vite.config.ts:/app/vite.config.ts
 
   production:
     profiles: [production]
