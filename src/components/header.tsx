@@ -19,12 +19,14 @@ export function Header() {
           className="flex items-center gap-2 sm:gap-3"
           aria-label="Главное меню"
         >
-          <a
-            href="/"
-            className="hidden px-3 text-sm font-medium hover:text-primary sm:inline"
-          >
-            Ассортимент
-          </a>
+          {window.location.pathname !== "/page-2" && (
+            <a
+              href="/"
+              className="hidden px-3 text-sm font-medium hover:text-primary sm:inline"
+            >
+              Ассортимент
+            </a>
+          )}
           <Button
             variant="ghost"
             render={<a href="/page" />}

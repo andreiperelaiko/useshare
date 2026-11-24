@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react"
-import { Check, MapPin, Send, ShieldCheck } from "lucide-react"
+import { MapPin, Send, ShieldCheck } from "lucide-react"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -23,7 +24,6 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
 } from "@/components/ui/message-scroller"
-import { BackLink } from "@/components/header"
 import { ProductVisual } from "@/components/offer-card"
 import imageCredits from "@/data/image-credits.json"
 import {
@@ -35,12 +35,166 @@ import {
   type Offer,
 } from "@/lib/data"
 
-const stages = ["Заявка создана", "Заявка принята", "Предоплата"]
 type ImageCredit = {
   source: string
   artist: string
   license: string
   licenseUrl: string
+}
+
+function OfferSummary({
+  offer,
+  imageCredit,
+}: {
+  offer: Offer
+  imageCredit?: ImageCredit
+}) {
+  return (
+    <Card className="gap-0 overflow-hidden p-0 shadow-sm ring-0">
+      <div className="h-52 sm:h-56 lg:h-48">
+        <ProductVisual offer={offer} compact />
+      </div>
+      <CardHeader className="px-5 pt-5 pb-2">
+        <CardTitle>
+          <h1 className="text-xl leading-tight font-semibold tracking-tight">
+            {offer.title}
+          </h1>
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4 px-5 pb-5">
+        <p className="text-sm leading-6 whitespace-pre-wrap text-muted-foreground">
+          {offer.description}
+        </p>
+        <p className="flex items-start gap-2 text-sm text-muted-foreground">
+          <MapPin size={16} className="mt-0.5 shrink-0" />
+          <span>
+            {offer.location}
+            {offer.metro && ` · м. ${offer.metro}`}
+          </span>
+        </p>
+        <p>
+          <strong className="text-2xl">{formatPrice(offer.price)}</strong>
+          <span className="ml-1 text-sm text-muted-foreground">/ день</span>
+        </p>
+        {offer.isDemo && (
+          <p className="text-xs text-muted-foreground">
+            Демонстрационное объявление. Цена и доступность приведены для
+            примера.
+          </p>
+        )}
+        {imageCredit && (
+          <p className="text-xs text-muted-foreground">
+            Фото:{" "}
+            <a
+              href={imageCredit.source}
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              {imageCredit.artist}
+            </a>
+            {" · "}
+            <a
+              href={imageCredit.licenseUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              {imageCredit.license}
+            </a>
+          </p>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
+function ChatPanel({
+  offer,
+  messages,
+  draft,
+  onDraftChange,
+  onSend,
+}: {
+  offer: Offer
+  messages: ChatMessage[]
+  draft: string
+  onDraftChange: (value: string) => void
+  onSend: (event: FormEvent<HTMLFormElement>) => void
+}) {
+  return (
+    <Card className="h-[min(78dvh,860px)] min-h-[560px] min-w-0 gap-0 overflow-hidden py-0 shadow-sm ring-0">
+      <CardHeader className="border-b border-border/60 px-5 py-4">
+        <CardTitle className="flex items-center gap-3 text-lg">
+          <Avatar size="sm">
+            <AvatarFallback>А</AvatarFallback>
+          </Avatar>
+          Чат по объявлению
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex min-h-0 flex-1 flex-col gap-4 px-4 py-4 sm:px-5">
+        <MessageScrollerProvider>
+          <MessageScroller className="min-h-0 flex-1">
+            <MessageScrollerViewport>
+              <MessageScrollerContent className="py-3">
+                <MessageScrollerItem>
+                  <Message>
+                    <MessageAvatar>
+                      <Avatar size="sm">
+                        <AvatarFallback>U</AvatarFallback>
+                      </Avatar>
+                    </MessageAvatar>
+                    <MessageContent>
+                      <MessageHeader>Use & Share</MessageHeader>
+                      <Bubble variant="secondary">
+                        <BubbleContent>
+                          {offer.isDemo
+                            ? "Это демонстрационное объявление. Сообщения сохраняются только в вашем браузере."
+                            : "Напишите владельцу, чтобы обсудить детали аренды и удобное время встречи."}
+                        </BubbleContent>
+                      </Bubble>
+                    </MessageContent>
+                  </Message>
+                </MessageScrollerItem>
+                {messages.map((item) => (
+                  <MessageScrollerItem key={item.id}>
+                    <Message align="end">
+                      <MessageContent>
+                        <Bubble>
+                          <BubbleContent>{item.text}</BubbleContent>
+                        </Bubble>
+                        <MessageFooter>{item.time}</MessageFooter>
+                      </MessageContent>
+                    </Message>
+                  </MessageScrollerItem>
+                ))}
+              </MessageScrollerContent>
+            </MessageScrollerViewport>
+          </MessageScroller>
+        </MessageScrollerProvider>
+        <form onSubmit={onSend}>
+          <InputGroup>
+            <InputGroupInput
+              aria-label="Сообщение"
+              placeholder="Написать сообщение…"
+              value={draft}
+              onChange={(event) => onDraftChange(event.target.value)}
+            />
+            <InputGroupAddon align="inline-end">
+              <Button
+                type="submit"
+                size="icon-sm"
+                disabled={!draft.trim()}
+                aria-label="Отправить сообщение"
+              >
+                <Send />
+              </Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </form>
+      </CardContent>
+    </Card>
+  )
 }
 
 export function DetailPage() {
@@ -55,7 +209,7 @@ export function DetailPage() {
   const imageCredit = (imageCredits as Record<string, ImageCredit>)[id]
   const [messages, setMessages] = useState(() => getMessages(id))
   const [draft, setDraft] = useState("")
-  const [stage, setStage] = useState(0)
+
   function send(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     if (!draft.trim()) return
@@ -71,164 +225,27 @@ export function DetailPage() {
     setMessages((current) => [...current, message])
     setDraft("")
   }
+
   return (
-    <main className="page-shell py-9 pb-20">
-      <BackLink />
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <span className="eyebrow">Объявление · общение</span>
-          <h1 className="mt-2 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">
-            {offer.title}
-          </h1>
-        </div>
-      </div>
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(280px,.7fr)]">
-        <div className="min-w-0 space-y-6">
-          <Card className="overflow-hidden border-border/70 p-0 shadow-none">
-            <div className="grid sm:grid-cols-[220px_1fr]">
-              <ProductVisual offer={offer} compact />
-              <div className="flex flex-col justify-center gap-4 p-6">
-                <p className="text-sm leading-6 text-muted-foreground">
-                  {offer.description}
-                </p>
-                <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin size={16} />
-                  {offer.location}
-                  {offer.metro && ` · м. ${offer.metro}`}
-                </p>
-                {offer.isDemo && (
-                  <p className="text-xs text-muted-foreground">
-                    Демонстрационное объявление. Цена и доступность приведены
-                    для примера.
-                  </p>
-                )}
-                {imageCredit && (
-                  <p className="text-xs text-muted-foreground">
-                    Фото:{" "}
-                    <a
-                      href={imageCredit.source}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline"
-                    >
-                      {imageCredit.artist}
-                    </a>
-                    {" · "}
-                    <a
-                      href={imageCredit.licenseUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline"
-                    >
-                      {imageCredit.license}
-                    </a>
-                  </p>
-                )}
-                <p>
-                  <strong className="text-2xl">
-                    {formatPrice(offer.price)}
-                  </strong>
-                  <span className="ml-1 text-sm text-muted-foreground">
-                    / день
-                  </span>
-                </p>
-              </div>
-            </div>
-          </Card>
-          <Card className="h-[440px] border-border/70 shadow-none">
-            <CardHeader className="border-b border-border/70">
-              <CardTitle className="flex items-center gap-3 text-lg">
-                <Avatar size="sm">
-                  <AvatarFallback>А</AvatarFallback>
-                </Avatar>
-                Чат по объявлению
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex min-h-0 flex-1 flex-col gap-4">
-              <MessageScrollerProvider>
-                <MessageScroller className="min-h-0 flex-1">
-                  <MessageScrollerViewport>
-                    <MessageScrollerContent className="py-3">
-                      <MessageScrollerItem>
-                        <Message>
-                          <MessageAvatar>
-                            <Avatar size="sm">
-                              <AvatarFallback>U</AvatarFallback>
-                            </Avatar>
-                          </MessageAvatar>
-                          <MessageContent>
-                            <MessageHeader>Use & Share</MessageHeader>
-                            <Bubble variant="secondary">
-                              <BubbleContent>
-                                {offer.isDemo
-                                  ? "Это демонстрационное объявление. Сообщения сохраняются только в вашем браузере."
-                                  : "Напишите владельцу, чтобы обсудить детали аренды и удобное время встречи."}
-                              </BubbleContent>
-                            </Bubble>
-                          </MessageContent>
-                        </Message>
-                      </MessageScrollerItem>
-                      {messages.map((item) => (
-                        <MessageScrollerItem key={item.id}>
-                          <Message align="end">
-                            <MessageContent>
-                              <Bubble>
-                                <BubbleContent>{item.text}</BubbleContent>
-                              </Bubble>
-                              <MessageFooter>{item.time}</MessageFooter>
-                            </MessageContent>
-                          </Message>
-                        </MessageScrollerItem>
-                      ))}
-                    </MessageScrollerContent>
-                  </MessageScrollerViewport>
-                </MessageScroller>
-              </MessageScrollerProvider>
-              <form onSubmit={send}>
-                <InputGroup>
-                  <InputGroupInput
-                    aria-label="Сообщение"
-                    placeholder="Написать сообщение…"
-                    value={draft}
-                    onChange={(event) => setDraft(event.target.value)}
-                  />
-                  <InputGroupAddon align="inline-end">
-                    <Button
-                      type="submit"
-                      size="icon-sm"
-                      disabled={!draft.trim()}
-                      aria-label="Отправить сообщение"
-                    >
-                      <Send />
-                    </Button>
-                  </InputGroupAddon>
-                </InputGroup>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-        <aside className="space-y-6">
-          <Card className="border-border/70 shadow-none">
+    <main className="page-shell py-8 pb-16">
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(300px,.85fr)]">
+        <ChatPanel
+          offer={offer}
+          messages={messages}
+          draft={draft}
+          onDraftChange={setDraft}
+          onSend={send}
+        />
+        <aside className="flex min-w-0 flex-col gap-5">
+          <OfferSummary offer={offer} imageCredit={imageCredit} />
+          <Card className="shadow-sm ring-0">
             <CardHeader>
-              <CardTitle className="text-lg">Статус аренды</CardTitle>
+              <CardTitle className="text-lg">Текущий статус</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
-              {stages.map((label, index) => (
-                <button
-                  key={label}
-                  type="button"
-                  aria-pressed={stage === index}
-                  onClick={() => setStage(index)}
-                  className={`flex w-full items-center gap-3 rounded-xl border p-3 text-left text-sm transition ${stage === index ? "border-primary bg-accent font-medium" : "border-transparent hover:bg-muted"}`}
-                >
-                  <span
-                    className={`flex size-7 shrink-0 items-center justify-center rounded-full ${stage >= index ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {stage > index ? <Check size={15} /> : index + 1}
-                  </span>
-                  {label}
-                </button>
-              ))}
+            <CardContent>
+              <Badge variant="secondary" className="px-3 py-1 text-sm">
+                {messages.length ? "Обсуждение аренды" : "Ожидает сообщения"}
+              </Badge>
             </CardContent>
           </Card>
           <div className="flex items-start gap-3 rounded-xl bg-accent p-4 text-sm leading-6 text-accent-foreground">
