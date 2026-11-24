@@ -2,7 +2,34 @@
 
 Адаптивный интерфейс сервиса аренды вещей. Реализован на React, Vite, Tailwind CSS и компонентах shadcn/ui с Base UI.
 
-## Запуск
+## Запуск через Docker
+
+Нужны Docker и Docker Compose. Локально устанавливать Node.js и пакеты из `node_modules` не требуется.
+
+```bash
+docker compose up --build
+```
+
+Откройте [http://localhost:4173](http://localhost:4173). Файлы `src/`, `public/`, `index.html` и `vite.config.ts` подключены к контейнеру: изменения видны без пересборки образа. После изменения `package.json` или `package-lock.json` снова выполните `docker compose up --build`.
+
+Проверить код в работающем контейнере:
+
+```bash
+docker compose exec app npm run lint
+docker compose exec app npm run build
+```
+
+Готовую статическую сборку можно проверить отдельно через Nginx:
+
+```bash
+docker compose --profile production up --build production
+```
+
+Она откроется на [http://localhost:4174](http://localhost:4174). Для других портов задайте `USESHARE_PORT` или `USESHARE_PREVIEW_PORT` перед командой. Контейнеры останавливаются командой `docker compose down` (для статической сборки — `docker compose --profile production down`).
+
+Данные профиля, свои предложения и запросы по-прежнему хранятся в `localStorage` браузера, а не в контейнере.
+
+## Запуск без Docker
 
 ```bash
 npm install
@@ -35,3 +62,4 @@ npm run dev
 - `src/data/` — демонстрационные предложения и запросы, сведения об изображениях.
 - `src/index.css` — цветовые токены, шрифты и стили иллюстраций.
 - `public/` — шрифты и изображения, используемые сайтом.
+- `docker/`, `compose.yaml`, `.dockerignore` — окружение разработки и статической сборки в контейнерах.

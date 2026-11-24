@@ -1,0 +1,10 @@
+.git
+.agents
+.DS_Store
+.env*
+node_modules
+dist
+dist-ssr
+*.log
+README.md
+IMAGE_CREDITS.md

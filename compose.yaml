@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: development
+    ports:
+      - "127.0.0.1:${USESHARE_PORT:-4173}:4173"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+      - ./vite.config.ts:/app/vite.config.ts
+
+  production:
+    profiles: [production]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: production
+    ports:
+      - "127.0.0.1:${USESHARE_PREVIEW_PORT:-4174}:80"
