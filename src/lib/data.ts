@@ -61,9 +61,22 @@ export function getMessages(id: string): ChatMessage[] {
   return read<Record<string, ChatMessage[]>>(MESSAGE_KEY, {})[id] ?? []
 }
 
+export function getConversations(): {
+  offerId: string
+  messages: ChatMessage[]
+}[] {
+  const all = read<Record<string, ChatMessage[]>>(MESSAGE_KEY, {})
+  return Object.entries(all)
+    .filter(([, messages]) => messages.length > 0)
+    .reverse()
+    .map(([offerId, messages]) => ({ offerId, messages }))
+}
+
 export function saveMessage(id: string, message: ChatMessage) {
   const all = read<Record<string, ChatMessage[]>>(MESSAGE_KEY, {})
-  all[id] = [...(all[id] ?? []), message]
+  const messages = all[id] ?? []
+  delete all[id]
+  all[id] = [...messages, message]
   localStorage.setItem(MESSAGE_KEY, JSON.stringify(all))
 }
 

@@ -24,10 +24,12 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
 } from "@/components/ui/message-scroller"
+import { ChatList, type Conversation } from "@/components/chat-list"
 import { ProductVisual } from "@/components/offer-card"
 import imageCredits from "@/data/image-credits.json"
 import {
   formatPrice,
+  getConversations,
   getMessages,
   getOffers,
   saveMessage,
@@ -199,7 +201,8 @@ function ChatPanel({
 
 export function DetailPage() {
   const id = new URLSearchParams(window.location.search).get("id") ?? "demo-001"
-  const offer: Offer = getOffers().find((item) => item.id === id) ?? {
+  const offers = getOffers()
+  const offer: Offer = offers.find((item) => item.id === id) ?? {
     id,
     title: "Велосипед",
     description: "Удобный городской велосипед для поездок по городу.",
@@ -209,6 +212,16 @@ export function DetailPage() {
   const imageCredit = (imageCredits as Record<string, ImageCredit>)[id]
   const [messages, setMessages] = useState(() => getMessages(id))
   const [draft, setDraft] = useState("")
+  const savedConversations = getConversations()
+  const conversationEntries = savedConversations.some(
+    (item) => item.offerId === id
+  )
+    ? savedConversations
+    : [{ offerId: id, messages: [] }, ...savedConversations]
+  const conversations: Conversation[] = conversationEntries.map((item) => ({
+    ...item,
+    offer: offers.find((candidate) => candidate.id === item.offerId),
+  }))
 
   function send(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -228,7 +241,8 @@ export function DetailPage() {
 
   return (
     <main className="page-shell py-8 pb-16">
-      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(300px,.85fr)]">
+      <div className="grid items-start gap-5 lg:grid-cols-[220px_minmax(0,1fr)] xl:grid-cols-[230px_minmax(0,1fr)_290px]">
+        <ChatList conversations={conversations} activeId={id} />
         <ChatPanel
           offer={offer}
           messages={messages}
@@ -236,7 +250,7 @@ export function DetailPage() {
           onDraftChange={setDraft}
           onSend={send}
         />
-        <aside className="flex min-w-0 flex-col gap-5">
+        <aside className="flex min-w-0 flex-col gap-5 lg:col-start-2 xl:col-start-auto">
           <OfferSummary offer={offer} imageCredit={imageCredit} />
           <Card className="shadow-sm ring-0">
             <CardHeader>
